@@ -11,6 +11,7 @@ import UIKit
 
 class MainVC: UIViewController {
     
+    static let instance = MainVC()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTxt: UITextField!
     
@@ -27,6 +28,15 @@ class MainVC: UIViewController {
             }
         }
         navigationController?.presentTransparentNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        ApiManager.instance.getAllCharacters { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
@@ -48,7 +58,7 @@ class MainVC: UIViewController {
                     self.tableView.reloadData()
                 }
             }
-        // Aunque también se puede hacer de esta forma y no hay que llamar a la API pero como es una prueba de CRUD lo he dejado de la otra forma.
+            // También se puede hacer de esta forma y no hay que llamar a la API pero como es una prueba de CRUD lo he dejado de la otra forma.
             // ApiManager.instance.characters.sort {
             //    $0.name < $1.name
             // }
@@ -97,7 +107,7 @@ extension MainVC: UITextFieldDelegate {
         }
         searchTxt.text = ""
         
-
+        
     }
 }
 
@@ -128,8 +138,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
-    
 }
 
 

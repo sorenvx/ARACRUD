@@ -31,3 +31,4 @@ let mainCell = "MainCell"
 
 let TO_DETAIL = "toDetail"
 let TO_NEW = "toNew"
+let TO_UPDATE = "toUpdate"

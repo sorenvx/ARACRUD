@@ -119,4 +119,48 @@ class ApiManager {
         }
     }
     
+    
+    //MARK: - Post
+    
+    func registerCharacter(name: String, birthdate: String, completion: @escaping CompletionHandler) {
+        
+        let body: [String: Any] = [
+            "name": name,
+            "birthdate": birthdate
+        ]
+        
+        Alamofire.request(BASE_URL, method: .post, parameters: body, encoding: JSONEncoding.default).responseString { (response) in
+            
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
+    
+    //MARK: - Put
+    
+    func updateCharacter(name: String, birthdate: String, id: String, completion: @escaping CompletionHandler) {
+        
+        let body: [String: Any] = [
+            "id": id,
+            "name": name,
+            "birthdate": birthdate
+        ]
+        
+        Alamofire.request("\(BASE_URL)/\(id)", method: .put, parameters: body, encoding: JSONEncoding.default).responseString { (response) in
+            
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
+    
 }
