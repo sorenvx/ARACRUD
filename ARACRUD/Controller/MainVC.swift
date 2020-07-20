@@ -24,6 +24,7 @@ class MainVC: UIViewController {
         tableView.rowHeight = 50.0
         setUpCharacters()
         NotificationCenter.default.addObserver(self, selector: #selector(MainVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        self.title = NSLocalizedString("CHARACTER", comment: "")
         navigationController?.presentTransparentNavigationBar()
         
     }
