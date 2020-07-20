@@ -9,8 +9,4 @@
 
 "CREATED" = "¡Personaje creado!";
 "SAVED" = "Cambios guardados";
-//"CANCEL" = "Cancelar";
-//"DELETE" = "Eliminar";
-//"SEARCH" = "Busca aquí";
-//"SAVED" = "¡Guardada!";
-//"SAVEDTOPHOTOS" = "Tu imagen se ha guardado en Fotos.";
+"SEARCH" = "Busca aquí";

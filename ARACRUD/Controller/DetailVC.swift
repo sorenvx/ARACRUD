@@ -19,14 +19,6 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.presentTransparentNavigationBar()
-        navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
-        navigationController?.navigationItem.backBarButtonItem?.title = characterDetail?.name
-        nameTxt.text = characterDetail?.name
-        showDateProperly()
-        NotificationCenter.default.addObserver(self, selector: #selector(DetailVC.userDetailDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-    }
-    
-    @objc func userDetailDidChange(_ noti: Notification) {
         nameTxt.text = characterDetail?.name
         showDateProperly()
     }

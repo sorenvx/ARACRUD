@@ -37,5 +37,4 @@ let TO_UPDATE = "toUpdate"
 //MARK: - Notification Center
 
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
-let NOTIF_USER_DETAIL_DID_CHANGE = Notification.Name("notifUserDetailChanged")
 

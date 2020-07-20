@@ -49,12 +49,24 @@ class MainVC: UIViewController {
         performSegue(withIdentifier: TO_NEW, sender: nil)
     }
     
+    @IBAction func refreshPressed(_ sender: UIButton) {
+        setUpCharacters()
+    }
+    
     @IBAction func optionsPressed(_ sender: UIBarButtonItem) {
         if isSorted {
-            setUpCharacters()
+            ApiManager.instance.sortAllCharactersDescByName { (success) in
+                if success {
+                    self.tableView.reloadData()
+                }
+            }
             isSorted = false
         } else {
-            setUpCharacters()
+            ApiManager.instance.sortAllCharactersAscByName { (success) in
+                if success {
+                    self.tableView.reloadData()
+                }
+            }
             // También se puede hacer de esta forma y no hay que llamar a la API pero como es una prueba de CRUD lo he dejado de la otra forma.
             // ApiManager.instance.characters.sort {
             //    $0.name < $1.name
@@ -76,7 +88,6 @@ extension MainVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTxt.endEditing(true)
         return true
-        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -84,11 +95,7 @@ extension MainVC: UITextFieldDelegate {
             return true
         } else {
             searchTxt.placeholder = NSLocalizedString("SEARCH", comment: "")
-            ApiManager.instance.getAllCharacters { (success) in
-                if success {
-                    self.tableView.reloadData()
-                }
-            }
+            setUpCharacters()
             return false
         }
     }
@@ -103,8 +110,6 @@ extension MainVC: UITextFieldDelegate {
             }
         }
         searchTxt.text = ""
-        
-        
     }
 }
 

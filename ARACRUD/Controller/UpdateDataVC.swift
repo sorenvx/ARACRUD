@@ -40,7 +40,6 @@ class UpdateDataVC: UIViewController {
                         
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                             NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-                            NotificationCenter.default.post(name: NOTIF_USER_DETAIL_DID_CHANGE, object: nil)
                             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         }))
                         self.present(alert, animated: true)
