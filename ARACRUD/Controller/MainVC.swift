@@ -22,21 +22,27 @@ class MainVC: UIViewController {
         configure()
         searchTxt.delegate = self
         tableView.rowHeight = 50.0
+        setUpCharacters()
+        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        navigationController?.presentTransparentNavigationBar()
+        
+    }
+    
+    @objc func userDataDidChange(_ noti: Notification) {
+        setUpCharacters()
+    }
+    
+    func setUpCharacters() {
         ApiManager.instance.getAllCharacters { (success) in
             if success {
                 self.tableView.reloadData()
             }
         }
-        navigationController?.presentTransparentNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        ApiManager.instance.getAllCharacters { (success) in
-            if success {
-                self.tableView.reloadData()
-            }
-        }
+        setUpCharacters()
     }
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
@@ -45,19 +51,10 @@ class MainVC: UIViewController {
     
     @IBAction func optionsPressed(_ sender: UIBarButtonItem) {
         if isSorted {
-            ApiManager.instance.sortAllCharactersDescByName { (success) in
-                if success {
-                    self.tableView.reloadData()
-                }
-            }
+            setUpCharacters()
             isSorted = false
         } else {
-            
-            ApiManager.instance.sortAllCharactersAscByName { (success) in
-                if success {
-                    self.tableView.reloadData()
-                }
-            }
+            setUpCharacters()
             // También se puede hacer de esta forma y no hay que llamar a la API pero como es una prueba de CRUD lo he dejado de la otra forma.
             // ApiManager.instance.characters.sort {
             //    $0.name < $1.name

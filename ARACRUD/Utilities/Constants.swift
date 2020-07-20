@@ -32,3 +32,10 @@ let mainCell = "MainCell"
 let TO_DETAIL = "toDetail"
 let TO_NEW = "toNew"
 let TO_UPDATE = "toUpdate"
+
+
+//MARK: - Notification Center
+
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIF_USER_DETAIL_DID_CHANGE = Notification.Name("notifUserDetailChanged")
+

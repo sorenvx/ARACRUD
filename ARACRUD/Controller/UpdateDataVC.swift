@@ -10,9 +10,7 @@ import UIKit
 
 class UpdateDataVC: UIViewController {
     
-    
     @IBOutlet weak var nameTxt: UITextField!
-    
     @IBOutlet weak var birthdatePicker: UIDatePicker!
     
     var birthdateString = ""
@@ -21,8 +19,6 @@ class UpdateDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
     
     @IBAction func dataPickerChanged(_ sender: UIDatePicker) {
         let horaSeleccionada = sender.date
@@ -38,13 +34,14 @@ class UpdateDataVC: UIViewController {
                 ApiManager.instance.updateCharacter(name: name, birthdate: birthdateString, id: idCharacter) { (success) in
                     if success {
                         let alert =  UIAlertController(
-                            title: NSLocalizedString("DELETEFAV", comment: ""),
-                            message: NSLocalizedString("SURE", comment: ""),
+                            title: NSLocalizedString("SAVED", comment: ""),
+                            message: NSLocalizedString("", comment: ""),
                             preferredStyle: .alert) // tipo de view controller especial
                         
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                            NotificationCenter.default.post(name: NOTIF_USER_DETAIL_DID_CHANGE, object: nil)
                             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                            self.dismiss(animated: true, completion: nil)
                         }))
                         self.present(alert, animated: true)
                     } else {

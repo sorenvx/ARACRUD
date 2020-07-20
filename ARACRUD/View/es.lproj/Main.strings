@@ -1,0 +1,48 @@
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "3XR-Zu-EUz"; */
+"3XR-Zu-EUz.normalTitle" = "Guardar";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "4Wi-RG-2Wi"; */
+"4Wi-RG-2Wi.normalTitle" = "Guardar";
+
+/* Class = "UILabel"; text = "Change Data"; ObjectID = "DMk-QJ-t1x"; */
+"DMk-QJ-t1x.text" = "Cambiar Datos";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "I28-KC-1Qd"; */
+"I28-KC-1Qd.text" = "Nombre";
+
+/* Class = "UINavigationItem"; title = "Characters"; ObjectID = "MM5-Gp-jeG"; */
+"MM5-Gp-jeG.title" = "Personajes";
+
+/* Class = "UILabel"; text = "Add New Character"; ObjectID = "Nt1-U3-jeg"; */
+"Nt1-U3-jeg.text" = "Añadir Nuevo Personaje";
+
+/* Class = "UILabel"; text = "Birthdate"; ObjectID = "O45-A1-Zzv"; */
+"O45-A1-Zzv.text" = "Fecha de nacimiento";
+
+/* Class = "UILabel"; text = "Birthdate"; ObjectID = "OKy-oA-TZJ"; */
+"OKy-oA-TZJ.text" = "Fecha de nacimiento";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "PA4-27-mII"; */
+"PA4-27-mII.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wax-i3-Hh3"; */
+"Wax-i3-Hh3.text" = "Label";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "fQ2-BR-eMF"; */
+"fQ2-BR-eMF.text" = "Nombre";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "g60-CQ-w9D"; */
+"g60-CQ-w9D.text" = "Nombre:";
+
+/* Class = "UIButton"; normalTitle = "Change Data"; ObjectID = "kOs-UH-aTy"; */
+"kOs-UH-aTy.normalTitle" = "Cambiar datos";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "km0-87-3GD"; */
+"km0-87-3GD.text" = "Label";
+
+/* Class = "UILabel"; text = "Birthdate:"; ObjectID = "rfD-OJ-Tsd"; */
+"rfD-OJ-Tsd.text" = "Fecha de nacimiento:";
+
+/* Class = "UILabel"; text = "Personaje"; ObjectID = "w33-y2-EtH"; */
+"w33-y2-EtH.text" = "Personaje";

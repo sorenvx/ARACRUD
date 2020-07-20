@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ARACRUD
+
+  Created by Toni De Gea on 20/07/2020.
+  Copyright © 2020 Toni De Gea. All rights reserved.
+*/
+
+"CREATED" = "Character created!";
+"SAVED" = "The changes have been saved";

@@ -33,11 +33,13 @@ class NewCharacterVC: UIViewController {
             ApiManager.instance.registerCharacter(name: name, birthdate: birthdateString) { (success) in
                 if success {
                     let alert =  UIAlertController(
-                    title: NSLocalizedString("DELETEFAV", comment: ""),
-                    message: NSLocalizedString("SURE", comment: ""),
+                    title: NSLocalizedString("CREATED", comment: ""),
+                    message: NSLocalizedString("", comment: ""),
                     preferredStyle: .alert) // tipo de view controller especial
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                        
                         self.dismiss(animated: true, completion: nil)
                     }))
                     self.present(alert, animated: true)

@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  ARACRUD
+
+  Created by Toni De Gea on 20/07/2020.
+  Copyright © 2020 Toni De Gea. All rights reserved.
+*/
+
+
+"CREATED" = "¡Personaje creado!";
+"SAVED" = "Cambios guardados";
+//"CANCEL" = "Cancelar";
+//"DELETE" = "Eliminar";
+//"SEARCH" = "Busca aquí";
+//"SAVED" = "¡Guardada!";
+//"SAVEDTOPHOTOS" = "Tu imagen se ha guardado en Fotos.";
